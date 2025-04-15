@@ -1,1 +1,1 @@
-// Placeholder for src/pages/admin/Dashboard.tsx
+// Final implementation placeholder for src/pages/admin/Dashboard.tsx

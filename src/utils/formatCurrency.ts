@@ -1,1 +1,1 @@
-// Placeholder for src/utils/formatCurrency.ts
+// Final implementation placeholder for src/utils/formatCurrency.ts
