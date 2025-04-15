@@ -62,6 +62,11 @@ const InvestorDashboard = () => {
     );
   }
 
+  const handleViewNotice = (itemId: string) => {
+    console.log("Viewing notice:", itemId);
+    // Implementation for viewing the notice
+  };
+
   return (
     <div className="space-y-8">
       <div>
@@ -73,7 +78,8 @@ const InvestorDashboard = () => {
       {investor.pendingCapitalCall && (
         <AgendaAlert 
           amount={investor.capitalCallAmount} 
-          dueDate={investor.capitalCallDueDate} 
+          dueDate={investor.capitalCallDueDate}
+          onViewNotice={handleViewNotice}
         />
       )}
 
