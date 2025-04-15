@@ -29,18 +29,18 @@ const DocumentsSection: React.FC<DocumentsSectionProps> = ({ documents }) => {
 
   return (
     <section id="documents" className="scroll-mt-20">
-      <Card className="bg-card text-white border-[#222222] rounded-xl shadow-dashboard">
-        <CardHeader>
-          <CardTitle>Documents</CardTitle>
-          <CardDescription className="text-[#B0B0B0]">Access your fund documents</CardDescription>
+      <Card className="rounded-xl shadow-md border border-gray-200 overflow-hidden">
+        <CardHeader className="bg-white border-b border-gray-100">
+          <CardTitle className="text-xl text-gray-800">Documents</CardTitle>
+          <CardDescription className="text-gray-500">Access your fund documents</CardDescription>
           
-          <div className="flex flex-wrap gap-2 mt-2">
+          <div className="flex flex-wrap gap-2 mt-4">
             <Button
               variant={activeFilter === null ? "default" : "outline"}
               size="sm"
               className={activeFilter === null 
-                ? "bg-[#4B2E83] hover:bg-[#3a2266]" 
-                : "border-[#333333] text-white hover:bg-[#222222]"
+                ? "" 
+                : "border-gray-200 text-gray-700 hover:bg-gray-50"
               }
               onClick={() => setActiveFilter(null)}
             >
@@ -52,8 +52,8 @@ const DocumentsSection: React.FC<DocumentsSectionProps> = ({ documents }) => {
                 variant={activeFilter === category ? "default" : "outline"}
                 size="sm"
                 className={activeFilter === category 
-                  ? "bg-[#4B2E83] hover:bg-[#3a2266]" 
-                  : "border-[#333333] text-white hover:bg-[#222222]"
+                  ? "" 
+                  : "border-gray-200 text-gray-700 hover:bg-gray-50"
                 }
                 onClick={() => setActiveFilter(category)}
               >
@@ -62,25 +62,27 @@ const DocumentsSection: React.FC<DocumentsSectionProps> = ({ documents }) => {
             ))}
           </div>
         </CardHeader>
-        <CardContent>
+        <CardContent className="p-6 bg-white">
           <div className="space-y-4">
             {filteredDocuments.length === 0 ? (
-              <p className="text-[#B0B0B0] italic">No documents available</p>
+              <p className="text-gray-500 italic">No documents available</p>
             ) : (
               filteredDocuments.map((doc) => (
-                <div key={doc.id} className="flex items-center justify-between p-4 bg-[#222222] rounded-lg">
+                <div key={doc.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                   <div className="flex items-center">
-                    <FileText className="h-5 w-5 text-[#4B2E83] mr-3" />
+                    <div className="bg-primary/10 p-2 rounded-full mr-3">
+                      <FileText className="h-5 w-5 text-primary" />
+                    </div>
                     <div>
-                      <p className="font-medium text-white">{doc.name}</p>
-                      <p className="text-xs text-[#B0B0B0]">
+                      <p className="font-medium text-gray-800">{doc.name}</p>
+                      <p className="text-xs text-gray-500">
                         {doc.category} • Uploaded: {doc.uploaded}
                       </p>
                       
                       {doc.category === "Contribution Notices" && doc.dueDate && (
                         <p className="text-xs mt-1">
-                          <span className="text-[#B0B0B0]">Due Date: </span>
-                          <span className="font-bold text-red-400">{doc.dueDate}</span>
+                          <span className="text-gray-600">Due Date: </span>
+                          <span className="font-bold text-red-600">{doc.dueDate}</span>
                           {doc.percentage && ` (${doc.percentage})`}
                         </p>
                       )}
@@ -91,7 +93,7 @@ const DocumentsSection: React.FC<DocumentsSectionProps> = ({ documents }) => {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      className="flex items-center border-[#333333] text-white hover:bg-[#333333]"
+                      className="flex items-center border-gray-200 text-gray-700 hover:bg-gray-100"
                     >
                       <Eye className="h-3.5 w-3.5 mr-1.5" />
                       View
@@ -101,7 +103,7 @@ const DocumentsSection: React.FC<DocumentsSectionProps> = ({ documents }) => {
                       <Button 
                         variant="outline" 
                         size="sm"
-                        className="flex items-center border-[#333333] text-white hover:bg-[#333333]"
+                        className="flex items-center border-gray-200 text-gray-700 hover:bg-gray-100"
                       >
                         <Download className="h-3.5 w-3.5 mr-1.5" />
                         Download

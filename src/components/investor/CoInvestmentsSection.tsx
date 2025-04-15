@@ -25,29 +25,29 @@ const CoInvestmentsSection: React.FC<CoInvestmentsSectionProps> = ({ coInvestmen
   }
 
   return (
-    <section id="co-investments" className="mb-12 scroll-mt-20">
-      <Card className="bg-card text-white border-[#222222] rounded-xl shadow-dashboard">
-        <CardHeader>
-          <CardTitle>Co-Investments</CardTitle>
-          <CardDescription className="text-[#B0B0B0]">Your direct co-investment opportunities alongside the fund</CardDescription>
+    <section id="co-investments" className="mb-8 scroll-mt-20">
+      <Card className="rounded-xl shadow-md border border-gray-200 overflow-hidden">
+        <CardHeader className="bg-white border-b border-gray-100">
+          <CardTitle className="text-xl text-gray-800">Co-Investments</CardTitle>
+          <CardDescription className="text-gray-500">Your direct co-investment opportunities alongside the fund</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="p-6 bg-white">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="text-[#B0B0B0]">Company</TableHead>
-                  <TableHead className="text-[#B0B0B0]">Agreement Date</TableHead>
-                  <TableHead className="text-[#B0B0B0]">Valuation</TableHead>
-                  <TableHead className="text-[#B0B0B0]">Shares</TableHead>
-                  <TableHead className="text-[#B0B0B0]">Stake</TableHead>
-                  <TableHead className="text-[#B0B0B0]">Current Value</TableHead>
-                  <TableHead className="text-[#B0B0B0]">XIRR</TableHead>
+                  <TableHead className="text-gray-600">Company</TableHead>
+                  <TableHead className="text-gray-600">Agreement Date</TableHead>
+                  <TableHead className="text-gray-600">Valuation</TableHead>
+                  <TableHead className="text-gray-600">Shares</TableHead>
+                  <TableHead className="text-gray-600">Stake</TableHead>
+                  <TableHead className="text-gray-600">Current Value</TableHead>
+                  <TableHead className="text-gray-600">XIRR</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {coInvestments.map((investment) => (
-                  <TableRow key={investment.id} className="border-b border-[#222222]">
+                  <TableRow key={investment.id}>
                     <TableCell className="font-medium">{investment.company}</TableCell>
                     <TableCell>{investment.agreementDate}</TableCell>
                     <TableCell title={formatIndianCurrency(investment.valuation, 'full')}>
@@ -58,7 +58,7 @@ const CoInvestmentsSection: React.FC<CoInvestmentsSectionProps> = ({ coInvestmen
                     <TableCell title={formatIndianCurrency(investment.value, 'full')}>
                       {formatIndianCurrency(investment.value)}
                     </TableCell>
-                    <TableCell className="text-green-400">{investment.xirr}</TableCell>
+                    <TableCell className="text-green-600">{investment.xirr}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

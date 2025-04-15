@@ -41,6 +41,6 @@
 
   /* Subtle dividers */
   .section-divider {
-    @apply h-px bg-gray-100 my-8;
+    @apply h-px bg-gray-100 my-6;
   }
 }

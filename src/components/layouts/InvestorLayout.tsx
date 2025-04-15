@@ -28,7 +28,7 @@ export default function InvestorLayout() {
       {/* Desktop Header */}
       <div className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-          <h1 className="text-xl font-bold text-gray-900">NAFA Investor Portal</h1>
+          <h1 className="text-xl font-bold text-primary">NAFA Investor Portal</h1>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">

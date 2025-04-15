@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { Card } from "@/components/ui/card";
 import SummarySection from '@/components/investor/SummarySection';
 import NavSection from '@/components/investor/NavSection';
 import CapitalActivitySection from '@/components/investor/CapitalActivitySection';
@@ -151,10 +150,10 @@ const InvestorDashboard = () => {
 
   if (!investor) {
     return (
-      <Card className="p-6 shadow-sm rounded-xl">
+      <div className="p-6 shadow-sm rounded-xl bg-white">
         <h2 className="text-xl font-semibold text-gray-900">Investor not found</h2>
         <p className="text-gray-500 mt-2">Unable to load investor data. Please try again.</p>
-      </Card>
+      </div>
     );
   }
 
@@ -164,7 +163,7 @@ const InvestorDashboard = () => {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 max-w-6xl mx-auto">
       <div>
         <h1 className="text-2xl font-semibold text-gray-900">Investor Dashboard</h1>
         <p className="text-gray-500 mt-1">Your investment at a glance</p>
@@ -180,8 +179,7 @@ const InvestorDashboard = () => {
       )}
 
       {/* Investment Summary */}
-      <section id="summary" className="pt-4">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Summary</h2>
+      <section id="summary" className="scroll-mt-20">
         <SummarySection 
           investorName={investor.name}
           classOfUnits={investor.classOfUnits}
@@ -193,16 +191,12 @@ const InvestorDashboard = () => {
       </section>
 
       {/* NAV History Section */}
-      <div className="section-divider"></div>
-      <section id="nav-history" className="pt-4">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">NAV History</h2>
+      <section id="nav-history" className="scroll-mt-20">
         <NavSection navHistory={mockNavHistory} />
       </section>
 
       {/* Capital Activity Section */}
-      <div className="section-divider"></div>
-      <section id="capital-activity" className="pt-4">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Capital Activity</h2>
+      <section id="capital-activity" className="scroll-mt-20">
         <CapitalActivitySection 
           contributions={mockContributions}
           distributions={mockDistributions}
@@ -212,16 +206,12 @@ const InvestorDashboard = () => {
       </section>
 
       {/* Co-Investments Section */}
-      <div className="section-divider"></div>
-      <section id="co-investments" className="pt-4">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Co-Investments</h2>
+      <section id="co-investments" className="scroll-mt-20">
         <CoInvestmentsSection coInvestments={mockCoInvestments} />
       </section>
 
       {/* Documents Section */}
-      <div className="section-divider"></div>
-      <section id="documents" className="pt-4">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Documents</h2>
+      <section id="documents" className="scroll-mt-20">
         <DocumentsSection documents={mockDocuments} />
       </section>
     </div>

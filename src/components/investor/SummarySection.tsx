@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Card } from "@/components/ui/card";
 import { formatIndianCurrency } from "@/utils/formatters";
 
 type SummarySectionProps = {
@@ -20,51 +21,51 @@ const SummarySection: React.FC<SummarySectionProps> = ({
   onSectionClick
 }) => {
   return (
-    <div className="bg-card p-6 shadow-dashboard rounded-xl mb-6 border border-[#222222]">
-      <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold text-[#4B2E83]">{investorName}</h1>
-        <p className="text-sm text-[#B0B0B0]">Class of Units: {classOfUnits}</p>
+    <div className="bg-white p-6 shadow-md rounded-xl mb-8">
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
+        <h1 className="text-2xl font-bold text-primary">{investorName}</h1>
+        <p className="text-sm text-gray-500">Class of Units: {classOfUnits}</p>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div 
-          className="bg-[#222222] p-4 rounded-xl text-center cursor-pointer hover:shadow-lg transition-shadow"
+        <Card 
+          className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer"
           onClick={() => onSectionClick("capital-activity")}
         >
-          <p className="text-sm text-[#B0B0B0] mb-2">Total Commitment</p>
+          <p className="text-sm text-gray-500 mb-2">Total Commitment</p>
           <p 
-            className="text-2xl font-bold text-white" 
+            className="text-2xl font-bold text-gray-800" 
             title={formatIndianCurrency(totalCommitment, 'full')}
           >
             {formatIndianCurrency(totalCommitment)}
           </p>
-        </div>
+        </Card>
         
-        <div 
-          className="bg-[#222222] p-4 rounded-xl text-center cursor-pointer hover:shadow-lg transition-shadow"
+        <Card 
+          className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer"
           onClick={() => onSectionClick("capital-activity")}
         >
-          <p className="text-sm text-[#B0B0B0] mb-2">Contributed Capital</p>
+          <p className="text-sm text-gray-500 mb-2">Contributed Capital</p>
           <p 
-            className="text-2xl font-bold text-white" 
+            className="text-2xl font-bold text-gray-800" 
             title={formatIndianCurrency(contributedCapital, 'full')}
           >
             {formatIndianCurrency(contributedCapital)}
           </p>
-        </div>
+        </Card>
         
-        <div 
-          className="bg-[#222222] p-4 rounded-xl text-center cursor-pointer hover:shadow-lg transition-shadow"
+        <Card 
+          className="bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer"
           onClick={() => onSectionClick("nav-history")}
         >
-          <p className="text-sm text-[#B0B0B0] mb-2">Current NAV</p>
+          <p className="text-sm text-gray-500 mb-2">Current NAV</p>
           <p 
-            className="text-2xl font-bold text-white" 
+            className="text-2xl font-bold text-gray-800" 
             title={formatIndianCurrency(currentNAV, 'full')}
           >
             {formatIndianCurrency(currentNAV)}
           </p>
-        </div>
+        </Card>
       </div>
     </div>
   );
