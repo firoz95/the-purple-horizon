@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -22,7 +23,7 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: "#111111",
+        background: "#111827",
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -46,7 +47,7 @@ export default {
         },
         text: {
           primary: "#FFFFFF",
-          secondary: "#808080"
+          secondary: "#B0B0B0"
         },
         card: {
           DEFAULT: "#1A1A1A",

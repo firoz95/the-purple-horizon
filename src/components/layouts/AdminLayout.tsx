@@ -2,13 +2,14 @@
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, User, FileText, BarChart3, LogOut, PlusCircle, AlertCircle } from "lucide-react";
 
 export default function AdminLayout() {
   const { signOut } = useAuth();
-  const [activePage, setActivePage] = useState("dashboard");
+  const location = useLocation();
+  const [activePage, setActivePage] = useState(location.pathname.split('/').pop() || "dashboard");
 
   const navItems = [
     { name: "Dashboard", path: "/admin/dashboard", icon: BarChart3 },
@@ -21,7 +22,7 @@ export default function AdminLayout() {
   return (
     <div className="flex min-h-screen bg-background">
       {/* Desktop Sidebar */}
-      <div className="hidden md:flex w-64 flex-col bg-card border-r border-[#222222]">
+      <div className="hidden md:flex w-64 flex-col bg-card border-r border-[#222222] rounded-r-xl shadow-dashboard">
         <div className="flex items-center justify-center h-20 border-b border-[#222222]">
           <h1 className="text-xl font-bold text-white">NAFA Admin</h1>
         </div>
@@ -99,8 +100,8 @@ export default function AdminLayout() {
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col">
-        <header className="bg-card border-b border-[#222222] h-16 flex items-center justify-end px-6">
-          <div className="text-sm text-[#808080]">
+        <header className="bg-card border-b border-[#222222] h-16 flex items-center justify-end px-6 shadow-dashboard rounded-b-xl">
+          <div className="text-sm text-[#B0B0B0]">
             Admin Portal
           </div>
         </header>
