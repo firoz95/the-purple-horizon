@@ -5,15 +5,15 @@
 
 @layer base {
   :root {
-    --background: 215 25% 7%;
-    --card: 215 25% 10%;
-    --popover: 215 25% 10%;
+    --background: 0 0% 100%;
+    --card: 0 0% 100%;
+    --popover: 0 0% 100%;
     --primary: 271 47% 35%;
-    --secondary: 215 25% 13%;
-    --muted: 215 25% 13%;
+    --secondary: 220 14% 96%;
+    --muted: 220 14% 96%;
     --accent: 271 47% 35%;
     --destructive: 0 84% 60%;
-    --border: 215 25% 15%;
+    --border: 220 13% 91%;
   }
 
   * {
@@ -21,17 +21,17 @@
   }
 
   body {
-    @apply bg-background text-white antialiased overflow-x-hidden;
+    @apply bg-gray-50 text-gray-900 antialiased overflow-x-hidden;
   }
 
   /* Modern card styling */
   .dashboard-card {
-    @apply rounded-xl bg-card shadow-dashboard p-6 border border-[#222222];
+    @apply rounded-xl bg-white shadow-md p-6 border border-gray-100;
   }
 
   /* Section headers */
   .section-title {
-    @apply text-2xl font-semibold text-white mb-4;
+    @apply text-2xl font-semibold text-gray-900 mb-4;
   }
 
   /* Section containers */
@@ -41,6 +41,6 @@
 
   /* Subtle dividers */
   .section-divider {
-    @apply h-px bg-[#222222] my-8;
+    @apply h-px bg-gray-100 my-8;
   }
 }

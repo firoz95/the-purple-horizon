@@ -2,7 +2,6 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: "class",
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -23,45 +22,35 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: "#111827",
-        foreground: 'hsl(var(--foreground))',
+        background: "#FFFFFF",
+        foreground: '#111827',
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
+          DEFAULT: '#4B2E83',
+          foreground: '#FFFFFF'
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
+          DEFAULT: '#F8FAFC',
+          foreground: '#1F2937'
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
+          foreground: '#FFFFFF'
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
+          DEFAULT: '#F8FAFC',
+          foreground: '#64748B'
         },
         accent: {
           DEFAULT: "#4B2E83",
           hover: "#3a2266"
         },
         text: {
-          primary: "#FFFFFF",
-          secondary: "#B0B0B0"
+          primary: "#111827",
+          secondary: "#64748B"
         },
         card: {
-          DEFAULT: "#1A1A1A",
-          foreground: "#FFFFFF"
-        },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))'
+          DEFAULT: "#FFFFFF",
+          foreground: "#111827"
         }
       },
       borderRadius: {
@@ -70,29 +59,21 @@ export default {
         sm: 'calc(var(--radius) - 4px)'
       },
       boxShadow: {
-        'dashboard': '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2)',
+        'dashboard': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0'
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)'
-          }
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)'
-          },
-          to: {
-            height: '0'
-          }
-        }
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-up': 'accordion-up 0.2s ease-out',
       }
     }
   },
